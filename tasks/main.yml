@@ -13,16 +13,16 @@
     owner: root
     group: root
     mode: 0640
+  when:
+    ansible_distribution == 'Ubuntu'
 
-- name: Logwatch | Remove logwatch's cronjob
-  file:
-    path: /etc/cron.daily/00logwatch
-    state: absent
+- name: Logwatch | Configure logwatch (/usr/share/logwatch/default.conf/logwatch.conf)
+  template:
+    src: logwatch-default-conf.j2
+    dest: /usr/share/logwatch/default.conf/logwatch.conf
+    owner: root
+    group: root
+    mode: 0640
+  when:
+    ansible_distribution == 'Debian'
 
-- name: Logwatch | Configure logwatch's cronjob
-  cron:
-    name: logwatch
-    job: /usr/sbin/logwatch
-    special_time: "{{logwatch_cron_time}}"
-    state: present
-    user: root
