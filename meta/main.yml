@@ -1,5 +1,4 @@
-# file: logwatch/meta/main.yml
-
+---
 galaxy_info:
   author: pjan vandaele
   company: Ansibles
@@ -13,7 +12,3 @@ galaxy_info:
   categories:
   - system
   - monitoring
-
-dependencies:
-  - Ansibles.perl
-  - Ansibles.cron
