@@ -24,3 +24,5 @@
     name: logwatch
     job: /usr/sbin/logwatch
     special_time: "{{logwatch_cron_time}}"
+    state: present
+    user: root
