@@ -13,7 +13,7 @@
     dest: /etc/logwatch/conf/logwatch.conf
     owner: root
     group: root
-    mode: 0644
+    mode: 0640
 
 - name: Logwatch | Remove logwatch's cronjob
   file:
